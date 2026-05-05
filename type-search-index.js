@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"adt","l":"List"},{"p":"adt","l":"Map"},{"p":"adt","l":"OrderedPair"},{"p":"adt","l":"PriorityQueue"},{"p":"adt","l":"Queue"},{"p":"adt","l":"Set"},{"p":"adt","l":"Stack"},{"p":"adt","l":"Tree"}];updateSearchResults();
