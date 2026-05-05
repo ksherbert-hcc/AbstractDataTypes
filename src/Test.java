@@ -1,5 +1,6 @@
 public class Test {
-    public static void main(String[] args) throws Exception {
-        throw new Exception("Intentionally testing CI failure badge");
+    public static void main(String[] args) {
+        System.err.println("Forcing a fail to test CI failure indicator.");
+        System.exit(1);
     }
 }
