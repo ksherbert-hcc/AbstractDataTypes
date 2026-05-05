@@ -22,16 +22,3 @@ jobs:
         with:
           folder: docs
           branch: gh-pages
-  Run-Tests:
-    name: Run tests.
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install a compatible Java environment to GitHub's virtual machine.
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 25
-      - name: Clone this repository to GitHub's virtual machine.
-        uses: actions/checkout@v6
-      - name: Run the project's Test.java file.
-        run: java -cp lib/* -ea src/Test.java

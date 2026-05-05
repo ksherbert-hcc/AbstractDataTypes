@@ -34,8 +34,10 @@ In order to build documentation and the jar archive locally on your own computer
 ```shell
 # Compile source code and package it into a .jar file.
 javac -d bin -sourcepath src src/adt/*
-jar cvf abstract-data-types.jar -C bin .  
+jar cvf abstract-data-types.jar -C bin .
 
 # Generate documentation.
 javadoc -d docs -sourcepath src adt
 ```
+
+TODO: Formalize a build-and-release worfklow in CI.yml.
