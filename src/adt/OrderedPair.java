@@ -1,45 +1,45 @@
 package adt;
 
+/// A data structure representing an ordered pair, i.e. a two-tuple.
+/// The two values need not have the same type.
+/// 
+/// This interface is meant to be implemented by the following concrete classes:
+/// - `KeyValuePair`
+/// 
+/// @param <T> the type of the first value
+/// @param <U> the type of the second value
 public interface OrderedPair<T,U> {
     /**
      * Get the first item of the ordered pair.
      * @return the first item
      */
-    T getFirst();
+    T first();
 
     /**
      * Get the second item of the ordered pair.
      * @return the second item
      */
-    U getSecond();
+    U second();
 
     /**
-     * Set the first item of the ordered pair.
-     * @param value the new first item
+     * Construct a new ordered pair with the order of items reversed.
+     * @return a new ordered pair
      */
-    void setFirst(T value);
-
-    /**
-     * Set the second item of the ordered pair.
-     * @param value the new second item
-     */
-    void setSecond(U value);
+    OrderedPair<U,T> reversed();
     
     /**
      * Run generic interface validation on a concrete ordered pair type.
-     * @param pair an ordered pair of an empty string and integer 0
-     * @return true iff all tests pass
+     * @param pair an ordered pair matching a string to an integer
      */
-    public static boolean validate(OrderedPair<String,Integer> pair) {
-        assert pair.getFirst().equals("");
-        assert pair.getSecond() == 0;
+    public static void validate(OrderedPair<String,Integer> pair) {
+        OrderedPair<Integer,String> riap = pair.reversed();
 
-        pair.setFirst("A");
-        pair.setSecond(1);
+        // Verify the reversed ordered pair has reversed values.
+        assert pair.first().equals(riap.second());
+        assert riap.first().equals(pair.second());
 
-        assert pair.getFirst().equals("A");
-        assert pair.getSecond() == 1;
-        
-        return true;
+        System.out.println(String.format("""
+            %s passes OrderedPair interface validation.
+        """, pair.getClass().getSimpleName()));
     }
 }

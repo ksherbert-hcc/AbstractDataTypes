@@ -1,27 +1,36 @@
 ## Getting Started
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ksherbert-hcc.github.io/AbstractDataTypes/)
-[![GitHub Actions CI](https://github.com/ksherbert-hcc/AbstractDataTypes/actions/workflows/CI.yml/badge.svg)](https://github.com/ksherbert-hcc/AbstractDataTypes/actions/workflows/CI.yml)
+[![GitHub Actions CI](https://github.com/ksherbert-hcc/AbstractDataTypes/actions/workflows/CI.yml/badge.svg)](https://github.com/ksherbert-hcc/AbstractDataTypes/actions/workflows/CI.yml?query=branch%3Amain)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This package defines the public interface for a variety of abstract data structures.
 
-## Folder Structure
+> Students, I recommend bookmarking this package's [reference documentation](https://ksherbert-hcc.github.io/AbstractDataTypes/).
 
-The workspace contains two folders by default, where:
+Each interface comes equipped with a static `validate` method which takes a concrete object (usually required to be empty),
+and performs a suite of simple tests to ensure the concrete class implemented the interface methods correctly.
+These tests are not meant to be comprehensive and should be supplemented with addtional unit tests special to the concrete class.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+These interfaces use generic typing. Implementing classes need not be generic themselves...but they probably should be.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+In order to define a class which uses an interface defined in this package, you must:
+1. Install this package in your project. See the [Installation](#installation) section below for further assistance.
+2. Import the interface. E.g. include `import adt.OrderedPair;` before your class definition.
+3. Indicate the class should use the interface in the class definition. E.g. `class KeyValuePair implements OrderedPair<String,Integer>`.
+4. Implement all interface methods. In our example, `KeyValuePair` must implement methods `String first()`, `Integer second()`, and `OrderedPair<Integer,String> reversed()`.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Installation
+Simply download the `abstract-data-types.jar` file and drop it in your Java project's `lib` folder.
 
-## Dependency Management
+Most IDEs will automatically load all dependencies located in `lib` when linting and running your code, but if you suspect something isn't working, look up how to manage your `CLASSPATH` environment variable.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-
+> Students, if you haven't yet done so, please bookmark this package's [reference documentation](https://ksherbert-hcc.github.io/AbstractDataTypes/).
 
 ## Building Protocol
+> Students, this section is addressed to a future version of myself. You need not ever do this!
+
+
+In order to build documentation and the jar archive locally on your own computer, clone this repository and run the following script.
 ```shell
 # Compile source code and package it into a .jar file.
 javac -d bin -sourcepath src src/adt/*
