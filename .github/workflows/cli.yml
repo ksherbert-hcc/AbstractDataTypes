@@ -19,14 +19,18 @@ jobs:
   Build-Docs:
     name: Build javadocs
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Clone repository to GitHub virtual machine
         uses: actions/checkout@v6
-      - name: Check java version
-        run: java -version
-      - name: Build the javadocs
+    #   - uses: actions/setup-java@v4
+    #     with:
+    #       java-version: 15
+    # Typically one would have to set up the java environment, but GitHub virtual machines come preloaded with one that seems to work.
+      - name: Build the javadocs in docs directory
         run: javadoc -d docs -sourcepath src adt
-      - name: Deploy to gh-pages
+      - name: Deploy the docs directory to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs
@@ -50,8 +54,9 @@ jobs:
       - name: Clone repository to GitHub virtual machine
         uses: actions/checkout@v6
     #   - uses: actions/setup-java@v4
-        # with:
-        #   java-version: 15
+    #     with:
+    #       java-version: 15
+    # Typically one would have to set up the java environment, but GitHub virtual machines come preloaded with one that seems to work.
       - name: Check java version
         run: java -version
       - name: Run the Test.java file
