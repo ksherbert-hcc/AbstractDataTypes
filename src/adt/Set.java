@@ -12,17 +12,17 @@ import java.util.Iterator;
 /// - `HashSet`
 /// 
 /// @param <T> the type of elements in the set
-public interface Set<T> extends Iterable<T> {    
+public interface Set<T> extends Iterable<T> {
     /**
-     * Compute the number of items in this collection.
+     * Compute the number of items in this set.
      * @return the number of items
      */
     int length();
     
     /**
-     * Check if the collection contains a given value.
+     * Check if the set contains a given value.
      * @param value the value to look for
-     * @return true iff the collection contains value
+     * @return true iff the set contains value
      */
     boolean contains(T value);
     

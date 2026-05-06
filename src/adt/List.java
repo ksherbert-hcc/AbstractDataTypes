@@ -14,7 +14,7 @@ package adt;
 /// @param <T> the type of elements in the list
 public interface List<T> {
     /**
-     * Compute the number of items in this collection.
+     * Compute the number of items in this list.
      * @return the number of items
      */
     int length();
@@ -34,7 +34,7 @@ public interface List<T> {
     void set(int index, T value);
     
     /**
-     * Check if the collection contains a given value.
+     * Check if the list contains a given value.
      * @param value the value to look for
      * @return true iff the collection contains value
      */

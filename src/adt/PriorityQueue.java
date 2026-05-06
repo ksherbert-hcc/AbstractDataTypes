@@ -12,8 +12,8 @@ package adt;
 /// @param <T> the type of elements in the queue
 public interface PriorityQueue<T extends Comparable<T>> {
     /**
-     * Check if the collection is empty.
-     * @return true iff the collection has no more items
+     * Check if the queue is empty.
+     * @return true iff the queue has no more items
      */
     boolean isEmpty();
     

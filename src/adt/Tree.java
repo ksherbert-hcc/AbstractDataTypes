@@ -10,9 +10,9 @@ import java.util.Iterator;
 /// - `MinHeap`
 /// 
 /// @param <T> the type of elements in the tree
-public interface Tree<T> extends Iterable<T> {    
+public interface Tree<T> extends Iterable<T> {
     /**
-     * Compute the number of items in this collection.
+     * Compute the number of items in this tree.
      * @return the number of items
      */
     int length();

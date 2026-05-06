@@ -8,10 +8,10 @@ package adt;
 /// - `Vector`
 /// 
 /// @param <T> the type of elements in the stack
-public interface Stack<T> {    
+public interface Stack<T> {
     /**
-     * Check if the collection is empty.
-     * @return true iff the collection has no more items
+     * Check if the stack is empty.
+     * @return true iff the stack has no more items
      */
     boolean isEmpty();
     

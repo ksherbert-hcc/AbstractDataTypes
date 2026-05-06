@@ -14,7 +14,7 @@ import java.util.Iterator;
 /// @param <V> the type of values in the map
 public interface Map<K,V> extends Iterable<OrderedPair<K,V>> {
     /**
-     * Compute the number of items in this collection.
+     * Compute the number of items in this map.
      * @return the number of items
      */
     int length();
