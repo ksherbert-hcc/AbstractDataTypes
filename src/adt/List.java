@@ -126,10 +126,11 @@ public interface List<T> {
         assert iter.next().equals(16);
         assert !iter.hasNext();
         */
-
-        System.out.println(String.format("""
-            %s passes List interface validation.
-        """, list.getClass().getSimpleName()));
+       
+        System.out.println(String.format(
+            "* %s passes List interface validation.",
+            list.getClass().getSimpleName()
+        ));
     }
 
 }

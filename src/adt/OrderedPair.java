@@ -38,8 +38,9 @@ public interface OrderedPair<T,U> {
         assert pair.first().equals(riap.second());
         assert riap.first().equals(pair.second());
 
-        System.out.println(String.format("""
-            %s passes OrderedPair interface validation.
-        """, pair.getClass().getSimpleName()));
+        System.out.println(String.format(
+            "* %s passes OrderedPair interface validation.",
+            pair.getClass().getSimpleName()
+        ));
     }
 }

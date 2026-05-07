@@ -75,18 +75,18 @@ public interface Map<K,V> extends Iterable<OrderedPair<K,V>> {
         assert map.remove("3").equals(3);
         assert map.length() == 2;
         assert !map.contains("3");
-        assert map.remove("3").equals(null);
+        assert map.remove("3") == null;
         assert map.length() == 2;
         
         // Verify return values for add.
-        assert map.put("9", 9).equals(null);
+        assert map.put("9", 9) == null;
         assert map.length() == 3;
         assert map.contains("9");
         assert map.put("9", 0).equals(9);
         assert map.length() == 3;
 
         // Verify get updates as expected.
-        assert map.get("3").equals(null);
+        assert map.get("3") == null;
         assert map.get("6").equals(6);
         assert map.get("9").equals(0);
 
@@ -111,8 +111,9 @@ public interface Map<K,V> extends Iterable<OrderedPair<K,V>> {
         assert p9.first().equals("9") && p9.second().equals(0);
         assert p12.first().equals("12") && p12.second().equals(12);
 
-        System.out.println(String.format("""
-            %s passes Map interface validation.
-        """, map.getClass().getSimpleName()));
+        System.out.println(String.format(
+            "* %s passes Map interface validation.",
+            map.getClass().getSimpleName()
+        ));
     }
 }

@@ -70,8 +70,9 @@ public interface Stack<T> {
         assert stack.pop().equals(3);
         assert stack.isEmpty();
 
-        System.out.println(String.format("""
-            %s passes Stack interface validation.
-        """, stack.getClass().getSimpleName()));
+        System.out.println(String.format(
+            "* %s passes Stack interface validation.",
+            stack.getClass().getSimpleName()
+        ));
     }
 }

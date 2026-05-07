@@ -75,9 +75,10 @@ public interface Tree<T> extends Iterable<T> {
         assert !tree.levelorder().hasNext();
         assert !tree.iterator().hasNext();
 
-        System.out.println(String.format("""
-            %s passes Tree interface validation. (But that doesn't mean a whole lot!)
-        """, tree.getClass().getSimpleName()));
+        System.out.println(String.format(
+            "* %s passes Tree interface validation. (But that doesn't mean a whole lot!)",
+            tree.getClass().getSimpleName()
+        ));
     }
 
 }

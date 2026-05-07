@@ -72,8 +72,9 @@ public interface PriorityQueue<T extends Comparable<T>> {
         assert queue.dequeue().equals(12);
         assert queue.isEmpty();
 
-        System.out.println(String.format("""
-            %s passes PriorityQueue interface validation.
-        """, queue.getClass().getSimpleName()));
+        System.out.println(String.format(
+            "* %s passes PriorityQueue interface validation.",
+            queue.getClass().getSimpleName()
+        ));
     }
 }

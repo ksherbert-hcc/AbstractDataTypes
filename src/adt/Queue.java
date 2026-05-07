@@ -71,8 +71,9 @@ public interface Queue<T> {
         assert queue.dequeue().equals(12);
         assert queue.isEmpty();
 
-        System.out.println(String.format("""
-            %s passes Queue interface validation.
-        """, queue.getClass().getSimpleName()));
+        System.out.println(String.format(
+            "* %s passes Queue interface validation.",
+            queue.getClass().getSimpleName()
+        ));
     }
 }

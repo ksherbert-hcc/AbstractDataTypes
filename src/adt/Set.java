@@ -87,8 +87,9 @@ public interface Set<T> extends Iterable<T> {
         assert v1.equals(9) || v2.equals(9) || v3.equals(9);
         assert v1.equals(12) || v2.equals(12) || v3.equals(12);
 
-        System.out.println(String.format("""
-            %s passes Set interface validation.
-        """, set.getClass().getSimpleName()));
+        System.out.println(String.format(
+            "* %s passes Set interface validation.",
+            set.getClass().getSimpleName()
+        ));
     }
 }
